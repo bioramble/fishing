@@ -20,7 +20,7 @@ if (!require(reshape2)) {
 }
 
 # --------------------------------------------------------------------------
-# prepare data
+# Prepare data
 # --------------------------------------------------------------------------
 # function implementing formula to calculate positive predictive value (PPV)
 calc_ppv <- function(prior, power, alpha) {
@@ -46,6 +46,9 @@ grid <- melt(grid,
              value.name = "PPV",
              variable.name = "alpha")
 
+# --------------------------------------------------------------------------
+# Plot data
+# --------------------------------------------------------------------------
 # plot PPV contours as facets
 ggplot(grid, aes(x = prior, y = power, fill = PPV)) +
   # color gradient from green to red
